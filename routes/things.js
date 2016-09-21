@@ -9,10 +9,10 @@ var mysql      = require('mysql');
 
 var pool      =    mysql.createPool({
      connectionLimit : 100, //important
-     host     : 'localhost',
-     user     : 'root',
-     password : 'vladioan12',
-     database : 'my_first_schema',
+     host     : 'us-cdbr-iron-east-04.cleardb.net',
+     user     : 'b08de066efb4af',
+     password : 'f2b5ff54',
+     database : 'heroku_a1165f5d43ce0fe',
      debug    :  false
  });
 
