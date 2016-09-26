@@ -1,0 +1,13 @@
+######account##########
+mihai.miulescu@outlook.com
+vladioan12
+
+#######app##############
+cryptic-harbor-22680
+
+
+#######database##########
+CLEARDB_DATABASE_URL => mysql://adffdadf2341:adf4234@us-cdbr-east.cleardb.com/heroku_db?reconnect=true
+CLEARDB_DATABASE_URL: mysql://b08de066efb4af:f2b5ff54@us-cdbr-iron-east-04.cleardb.net/heroku_a1165f5d43ce0fe?reconnect=true
+mysql --host=us-cdbr-east.cleardb.com --user=adffdadf2341 --password=adf4234 --reconnect heroku_db < my_dump_file.sql
+

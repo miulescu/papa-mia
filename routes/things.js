@@ -24,7 +24,7 @@ router.get('/', function(req, res){
            return;
          }   
  
-	 connection.query("select * from Categorii",function(err,rows){
+	 connection.query("select * from restaurante",function(err,rows){
              connection.release();
              if(!err) {
                  res.json(rows);
