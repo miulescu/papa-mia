@@ -37,8 +37,8 @@ router.get('/', function(req, res){
 
 	 // res.send('GET route on things.');
 });
-router.get('/:id/categorii', function(req, res){
-    res.send('Ati ales restaurantul cu id ' + req.params.id + '//' + req.params.id.categorii);
+router.get('/:id/categorii/:id', function(req, res){
+    res.send('Ati ales restaurantul cu id ' + req.params.id + '//' + req.params.id.categorii.id);
 });
 
 router.post('/', function(req, res){
