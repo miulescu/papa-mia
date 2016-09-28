@@ -39,7 +39,7 @@ router.get('/', function(req, res){
 });
 router.get('/:restid', function(req, res){
     res.send('Ati ales restaurantul cu id ', + req.params.restid);
-}
+});
 
 router.post('/', function(req, res){
 	res.send('POST route on things.');
