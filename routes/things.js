@@ -38,7 +38,7 @@ router.get('/', function(req, res){
 	 // res.send('GET route on things.');
 });
 router.get('/:id/categorii/', function(req, res){
-    // res.send('Ati ales restaurantul cu id ' + req.params.id + '//' + req.params.ids);
+    res.send('Ati ales restaurantul cu id ' + req.params.id );
 
     pool.getConnection(function(err,connection){
      if (err) {
@@ -47,7 +47,7 @@ router.get('/:id/categorii/', function(req, res){
            return;
          }   
  
-     connection.query("select categorii from meniu_categorii_items where id_restaurant = " + req.params.id ,function(err,rows){
+     connection.query("select cat_id from meniu_categorii_items where id_restaurant = " + req.params.id ,function(err,rows){
              connection.release();
              if(!err) {
                  res.json(rows);
