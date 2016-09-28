@@ -37,8 +37,22 @@ router.get('/', function(req, res){
 
 	 // res.send('GET route on things.');
 });
-router.get('/:id/categorii/:ids', function(req, res){
+router.get('/:id/categorii/', function(req, res){
     res.send('Ati ales restaurantul cu id ' + req.params.id + '//' + req.params.ids);
+
+    pool.getConnection(function(err,connection){
+     if (err) {
+           connection.release();
+           res.json({"code" : 100, "status" : "Error in connection database"});
+           return;
+         }   
+ 
+     connection.query("select categorii from meniu_categorii_items where id_restaurant = " + req.params.id ,function(err,rows){
+             connection.release();
+             if(!err) {
+                 res.json(rows);
+             }           
+         });
 });
 
 router.post('/', function(req, res){
