@@ -38,7 +38,7 @@ router.get('/', function(req, res){
 	 // res.send('GET route on things.');
 });
 router.get('/:id', function(req, res){
-    res.send('Ati ales restaurantul cu id ', + req.params.id);
+    res.send('Ati ales restaurantul cu id ' + req.params.id);
 });
 
 router.post('/', function(req, res){
