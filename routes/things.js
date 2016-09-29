@@ -60,7 +60,7 @@ router.get('/:id/categorii/', function(req, res){
 });
 
 router.get('/:id/categorii/:idcategorie/', function(req, res){
-    // res.send('Ati ales categoria cu id ' + req.params.idcategorie );
+    res.send('Ati ales categoria cu id ' + req.params.idcategorie );
 
     pool.getConnection(function(err,connection){
      if (err) {
