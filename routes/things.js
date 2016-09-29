@@ -69,15 +69,13 @@ router.get('/:id/categorii/:idcategorie/', function(req, res){
            return;
          }   
  
-     // connection.query("select  * from meniu_categorii_items  m  \
-     //                  inner join categorii c on m.cat_id = c.cat_id \
-     //                  inner join items i on i.Items_id = m.Items_id \
-     //                  where id_restaurant = " + req.params.id + " and c.cat_id = " + req.params.idcategorie , function(err,rows){
-     //         connection.release();
-     //         if(!err) {
-     //             res.json(rows);
-     //         }           
-     //     });
+     connection.query('select  * from meniu_categorii_items  m inner join categorii c on m.cat_id = c.cat_id inner join items i on i.Items_id = m.Items_id \
+                      where id_restaurant = ' + req.params.id + ' and c.cat_id = ' + req.params.idcategorie , function(err,rows){
+             connection.release();
+             if(!err) {
+                 res.json(rows);
+             }           
+         });
     });
 });
 
