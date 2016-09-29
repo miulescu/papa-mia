@@ -59,8 +59,8 @@ router.get('/:id/categorii/', function(req, res){
     });
 });
 
-router.get('/:id/categorii/:id/', function(req, res){
-    res.send('Ati ales categoria cu id ' + req.params );
+router.get('/:id/categorii/:id2/', function(req, res){
+    res.send('Ati ales categoria cu id ' + req.params.id2 );
 
     // pool.getConnection(function(err,connection){
     //  if (err) {
