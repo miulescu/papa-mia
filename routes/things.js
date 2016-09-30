@@ -48,7 +48,7 @@ router.get('/:id/categorii/', function(req, res){
            return;
          }   
  
-     connection.query("select distinct categorii.cat_nume from meniu_categorii_items \
+     connection.query("select distinct categorii.cat_nume, categorii.cat_id from meniu_categorii_items \
                 inner join categorii on meniu_categorii_items.cat_id = categorii.cat_id \
                 where id_restaurant = " + req.params.id ,function(err,rows){
              connection.release();
