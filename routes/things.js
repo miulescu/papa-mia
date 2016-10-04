@@ -78,6 +78,26 @@ router.get('/:id/categorii/:idcategorie/', function(req, res){
          });
     });
 });
+router.get('/:id/categorii/:idcategorie/:iditem', function(req, res){
+    // res.send('Ati ales categoria cu id ' + req.params.idcategorie );
+
+    pool.getConnection(function(err,connection){
+     if (err) {
+           connection.release();
+           res.json({"code" : 100, "status" : "Error in connection database"});
+           return;
+         }   
+ 
+     connection.query('select  * from meniu_categorii_items  m inner join items i on m.Item_id = i.Items_id  
+                      where m.Item_id =  ' + req.params.iditem , function(err,rows){
+             connection.release();
+             if(!err) {
+                 res.json(rows);
+             }           
+         });
+    });
+});
+
 
 
 router.post('/', function(req, res){
