@@ -79,7 +79,7 @@ router.get('/:id/categorii/:idcategorie/', function(req, res){
     });
 });
 
-router.get('/:id/categorii/:idcategorie/:iditem/', function(req, res){
+router.get('/:id/categorii/:idcategorie/items/:iditem/', function(req, res){
     // res.send('Ati ales categoria cu id ' + req.params.idcategorie );
 
     pool.getConnection(function(err,connection){
