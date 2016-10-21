@@ -59,6 +59,27 @@ router.get('/:id/categorii/', function(req, res){
     });
 });
 
+router.get('/:id/', function(req, res){
+    // res.send('Ati ales restaurantul cu id ' + req.params.id );
+
+    pool.getConnection(function(err,connection){
+     if (err) {
+           connection.release();
+           res.json({"code" : 100, "status" : "Error in connection database"});
+           return;
+         }   
+ 
+     connection.query("select distinct * from restaurante r \
+                inner join  restaurante_info i on r.rest_id = i.idInfo \
+                where r.rest_id = "  + req.params.id ,function(err,rows){
+             connection.release();
+             if(!err) {
+                 res.json(rows);
+             }           
+         });
+    });
+});
+
 router.get('/:id/categorii/:idcategorie/', function(req, res){
     // res.send('Ati ales categoria cu id ' + req.params.idcategorie );
 
