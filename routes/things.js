@@ -70,7 +70,7 @@ router.get('/:id/', function(req, res){
          }   
  
      connection.query("select distinct * from restaurante r \
-                inner join  restaurante_info i on r.rest_id = i.idInfo \
+                left join  restaurante_info i on r.rest_id = i.idInfo \
                 where r.rest_id = "  + req.params.id ,function(err,rows){
              connection.release();
              if(!err) {
