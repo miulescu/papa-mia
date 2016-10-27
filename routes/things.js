@@ -30,7 +30,7 @@ router.get('/', function(req, res){
   //                res.json(rows);
   //            }           
   //        });
-     connection.query("SELECT r.rest_nume, r.rest_logo_url, r.rest_descriere,\
+     connection.query("SELECT r.rest_id, r.rest_nume, r.rest_logo_url, r.rest_descriere,\
                       ri.info_ora_deschidere, ri.info_ora_inchidere FROM restaurante r \
                       left join restaurante_info ri on r.rest_id = ri.idInfo",function(err,rows){
              connection.release();
