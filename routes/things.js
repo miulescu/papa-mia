@@ -31,7 +31,7 @@ router.get('/', function(req, res){
   //            }           
   //        });
      connection.query("SELECT r.rest_id, r.rest_nume, r.rest_logo_url, r.rest_descriere,\
-                      ri.info_ora_deschidere, ri.info_ora_inchidere FROM restaurante r \
+                      ri.info_ora_deschidere, ri.info_ora_inchidere, ri.info_timp_livrare FROM restaurante r \
                       left join restaurante_info ri on r.rest_id = ri.idInfo",function(err,rows){
              connection.release();
              if(!err) {
