@@ -32,7 +32,7 @@ router.get('/', function(req, res){
   //        });
      connection.query("SELECT r.rest_id, r.rest_nume, r.rest_logo_url, r.rest_descriere,\
                       ri.info_ora_deschidere, ri.info_ora_inchidere, ri.info_timp_livrare, \
-                      ri.info_transport, ri.info_specialitati, a.adr_lat FROM restaurante r \
+                      ri.info_transport, ri.info_specialitati, a.adr_phone, a.adr_email FROM restaurante r \
                       left join restaurante_info ri on r.rest_id = ri.idInfo \
                       left join adrese a on r.rest_id = a.idAdrese ",function(err,rows){
              connection.release();
