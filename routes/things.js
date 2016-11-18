@@ -122,6 +122,7 @@ router.get("/:id/categorii/:idcategorie/items/:iditem/", function(req, res){
          }   
  
      connection.query('select  * from meniu_categorii_items  m inner join items i on m.Item_id = i.Items_id  \
+                      left join items_size s on m.Item_id = s.items_id \
                       where m.Item_id = ' + req.params.iditem , function(err,rows){
              connection.release();
              if(!err) {
